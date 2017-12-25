@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/RunServer.dir/mainServer.cpp.o CMakeFiles/RunServer.dir/Server.cpp.o CMakeFiles/RunServer.dir/ReadFile.cpp.o  -o RunServer 
