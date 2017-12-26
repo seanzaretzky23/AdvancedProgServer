@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-/usr/bin/c++   -lpthread -g   CMakeFiles/RunServer.dir/Server.cpp.o CMakeFiles/RunServer.dir/ReadFile.cpp.o CMakeFiles/RunServer.dir/StrCommand.cpp.o CMakeFiles/RunServer.dir/mainServer.cpp.o  -o RunServer lib/googletest-release-1.8.0/googlemock/gtest/libgtest.a lib/googletest-release-1.8.0/googlemock/gtest/libgtest_main.a -lpthread lib/googletest-release-1.8.0/googlemock/gtest/libgtest.a -lpthread 
-=======
-/usr/bin/c++  -g   CMakeFiles/RunServer.dir/mainServer.cpp.o CMakeFiles/RunServer.dir/Server.cpp.o CMakeFiles/RunServer.dir/ReadFile.cpp.o CMakeFiles/RunServer.dir/PrintCommand.cpp.o CMakeFiles/RunServer.dir/CommandsManager.cpp.o  -o RunServer 
->>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
