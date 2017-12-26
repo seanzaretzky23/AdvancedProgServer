@@ -3,4 +3,8 @@ CMAKE_PROGRESS_2 = 2
 CMAKE_PROGRESS_3 = 3
 CMAKE_PROGRESS_4 = 4
 CMAKE_PROGRESS_5 = 5
+<<<<<<< HEAD
+=======
+CMAKE_PROGRESS_6 = 6
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
 

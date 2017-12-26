@@ -46,5 +46,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

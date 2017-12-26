@@ -11,6 +11,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.8.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.8.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.8.2/CMakeSystem.cmake"
+<<<<<<< HEAD
   "../lib/googletest-release-1.8.0/CMakeLists.txt"
   "../lib/googletest-release-1.8.0/googlemock/CMakeLists.txt"
   "../lib/googletest-release-1.8.0/googletest/CMakeLists.txt"
@@ -40,6 +41,26 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/Platform/Linux.cmake"
   "/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/Platform/UnixPaths.cmake"
   "/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/ProcessorCount.cmake"
+=======
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCInformation.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCXXInformation.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeCommonLanguageInclude.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeFindCodeBlocks.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeGenericSystem.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeLanguageInformation.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeSystemSpecificInformation.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/Compiler/GNU-C.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/Compiler/GNU-CXX.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/Compiler/GNU.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/Platform/Linux-GNU-C.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/Platform/Linux-GNU-CXX.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/Platform/Linux-GNU.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/Platform/Linux.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/Platform/UnixPaths.cmake"
+  "/opt/clion-2017.2.3/bin/cmake/share/cmake-3.8/Modules/ProcessorCount.cmake"
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
   )
 
 # The corresponding makefile is:
@@ -58,7 +79,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+<<<<<<< HEAD
   "CMakeFiles/tests.dir/DependInfo.cmake"
+=======
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
   "CMakeFiles/RunServer.dir/DependInfo.cmake"
   "lib/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
   "lib/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"

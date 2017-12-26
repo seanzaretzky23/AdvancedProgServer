@@ -1,4 +1,11 @@
 /home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server
--- Configuring done
--- Generating done
--- Build files have been written to: /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug
+CMake Error: Parse error in cache file /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeCache.txt on line 2. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeCache.txt on line 8. Offending entry: >>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
+CMake Error: Parse error in cache file /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeCache.txt on line 205. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeCache.txt on line 264. Offending entry: >>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
+CMake Error: Parse error in cache file /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeCache.txt on line 274. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeCache.txt on line 278. Offending entry: >>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
+CMake Error: Parse error in cache file /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeCache.txt on line 357. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeCache.txt on line 361. Offending entry: >>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
+CMake Error: The current CMakeCache.txt directory /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeCache.txt is different than the directory /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+CMake Error: The source "/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/CMakeLists.txt" does not match the source "/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.

@@ -9,7 +9,7 @@ add_subdirectory(lib/googletest-release-1.8.0)
 include_directories(lib/googletest-release-1.8.0/googletest/include)
 include_directories(lib/googletest-release-1.8.0/googlemock/include)
 
-set(SOURCE_FILES_SERVER Server.cpp Server.h ReadFile.cpp ReadFile.h StrCommand.h StrCommand.cpp)
+set(SOURCE_FILES_SERVER Server.cpp Server.h ReadFile.cpp ReadFile.h StrCommand.h StrCommand.cpp Command.h PrintCommand.cpp PrintCommand.h CommandsManager.h CommandsManager.cpp)
 set(TEST_FILES tests/StrCommand_Test.cpp)
 
 add_executable(RunServer ${SOURCE_FILES_SERVER} mainServer.cpp)

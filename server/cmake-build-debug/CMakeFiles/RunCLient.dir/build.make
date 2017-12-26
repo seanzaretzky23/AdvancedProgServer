@@ -43,10 +43,17 @@ RM = /home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug
+=======
+CMAKE_SOURCE_DIR = /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
 
 # Include any dependencies generated for this target.
 include CMakeFiles/RunCLient.dir/depend.make
@@ -66,6 +73,10 @@ CMakeFiles/RunCLient.dir/clean:
 .PHONY : CMakeFiles/RunCLient.dir/clean
 
 CMakeFiles/RunCLient.dir/depend:
+<<<<<<< HEAD
 	cd /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/RunCLient.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/RunCLient.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
 .PHONY : CMakeFiles/RunCLient.dir/depend
 

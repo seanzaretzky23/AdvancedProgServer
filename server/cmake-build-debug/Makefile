@@ -48,10 +48,17 @@ RM = /home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug
+=======
+CMAKE_SOURCE_DIR = /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +133,15 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles 0
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
 .PHONY : all
 
 # The main clean target
@@ -157,6 +170,7 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+<<<<<<< HEAD
 # Target rules for targets named tests
 
 # Build rule for target.
@@ -170,6 +184,8 @@ tests/fast:
 .PHONY : tests/fast
 
 #=============================================================================
+=======
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
 # Target rules for targets named RunServer
 
 # Build rule for target.
@@ -182,6 +198,7 @@ RunServer/fast:
 	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/build
 .PHONY : RunServer/fast
 
+<<<<<<< HEAD
 #=============================================================================
 # Target rules for targets named gmock_main
 
@@ -233,6 +250,61 @@ gtest: cmake_check_build_system
 gtest/fast:
 	$(MAKE) -f lib/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
+=======
+CommandsManager.o: CommandsManager.cpp.o
+
+.PHONY : CommandsManager.o
+
+# target to build an object file
+CommandsManager.cpp.o:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/CommandsManager.cpp.o
+.PHONY : CommandsManager.cpp.o
+
+CommandsManager.i: CommandsManager.cpp.i
+
+.PHONY : CommandsManager.i
+
+# target to preprocess a source file
+CommandsManager.cpp.i:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/CommandsManager.cpp.i
+.PHONY : CommandsManager.cpp.i
+
+CommandsManager.s: CommandsManager.cpp.s
+
+.PHONY : CommandsManager.s
+
+# target to generate assembly for a file
+CommandsManager.cpp.s:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/CommandsManager.cpp.s
+.PHONY : CommandsManager.cpp.s
+
+PrintCommand.o: PrintCommand.cpp.o
+
+.PHONY : PrintCommand.o
+
+# target to build an object file
+PrintCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/PrintCommand.cpp.o
+.PHONY : PrintCommand.cpp.o
+
+PrintCommand.i: PrintCommand.cpp.i
+
+.PHONY : PrintCommand.i
+
+# target to preprocess a source file
+PrintCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/PrintCommand.cpp.i
+.PHONY : PrintCommand.cpp.i
+
+PrintCommand.s: PrintCommand.cpp.s
+
+.PHONY : PrintCommand.s
+
+# target to generate assembly for a file
+PrintCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/PrintCommand.cpp.s
+.PHONY : PrintCommand.cpp.s
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
 
 ReadFile.o: ReadFile.cpp.o
 
@@ -408,12 +480,22 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+<<<<<<< HEAD
 	@echo "... tests"
 	@echo "... RunServer"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+=======
+	@echo "... RunServer"
+	@echo "... CommandsManager.o"
+	@echo "... CommandsManager.i"
+	@echo "... CommandsManager.s"
+	@echo "... PrintCommand.o"
+	@echo "... PrintCommand.i"
+	@echo "... PrintCommand.s"
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
 	@echo "... ReadFile.o"
 	@echo "... ReadFile.i"
 	@echo "... ReadFile.s"

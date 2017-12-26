@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/install/strip.dir
 /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/install/local.dir
 /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/install.dir
@@ -28,3 +29,8 @@
 /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/lib/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir
 /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/lib/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/rebuild_cache.dir
 /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/lib/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir
+=======
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/RunServer.dir
+>>>>>>> aafbcf1cf8a04375c3e0ba34aa8ecbee0a0c5ed9
