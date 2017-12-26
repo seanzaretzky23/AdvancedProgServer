@@ -39,27 +39,73 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2017.2.3/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
+RM = /home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sean/Desktop/ex4/src/server
+CMAKE_SOURCE_DIR = /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sean/Desktop/ex4/src/server/cmake-build-debug
+CMAKE_BINARY_DIR = /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/opt/clion-2017.2.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +116,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/opt/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +126,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles /home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +157,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RunCLient
+# Target rules for targets named tests
 
 # Build rule for target.
-RunCLient: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RunCLient
-.PHONY : RunCLient
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
 
 # fast build rule for target.
-RunCLient/fast:
-	$(MAKE) -f CMakeFiles/RunCLient.dir/build.make CMakeFiles/RunCLient.dir/build
-.PHONY : RunCLient/fast
+tests/fast:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
 
 #=============================================================================
 # Target rules for targets named RunServer
@@ -135,6 +181,58 @@ RunServer: cmake_check_build_system
 RunServer/fast:
 	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/build
 .PHONY : RunServer/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) -f lib/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest-release-1.8.0/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) -f lib/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest-release-1.8.0/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f lib/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make lib/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f lib/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest-release-1.8.0/googlemock/gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
 
 ReadFile.o: ReadFile.cpp.o
 
@@ -190,6 +288,33 @@ Server.cpp.s:
 	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/Server.cpp.s
 .PHONY : Server.cpp.s
 
+StrCommand.o: StrCommand.cpp.o
+
+.PHONY : StrCommand.o
+
+# target to build an object file
+StrCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/StrCommand.cpp.o
+.PHONY : StrCommand.cpp.o
+
+StrCommand.i: StrCommand.cpp.i
+
+.PHONY : StrCommand.i
+
+# target to preprocess a source file
+StrCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/StrCommand.cpp.i
+.PHONY : StrCommand.cpp.i
+
+StrCommand.s: StrCommand.cpp.s
+
+.PHONY : StrCommand.s
+
+# target to generate assembly for a file
+StrCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/StrCommand.cpp.s
+.PHONY : StrCommand.cpp.s
+
 mainServer.o: mainServer.cpp.o
 
 .PHONY : mainServer.o
@@ -217,25 +342,96 @@ mainServer.cpp.s:
 	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/mainServer.cpp.s
 .PHONY : mainServer.cpp.s
 
+tests/StrCommand_Test.o: tests/StrCommand_Test.cpp.o
+
+.PHONY : tests/StrCommand_Test.o
+
+# target to build an object file
+tests/StrCommand_Test.cpp.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/StrCommand_Test.cpp.o
+.PHONY : tests/StrCommand_Test.cpp.o
+
+tests/StrCommand_Test.i: tests/StrCommand_Test.cpp.i
+
+.PHONY : tests/StrCommand_Test.i
+
+# target to preprocess a source file
+tests/StrCommand_Test.cpp.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/StrCommand_Test.cpp.i
+.PHONY : tests/StrCommand_Test.cpp.i
+
+tests/StrCommand_Test.s: tests/StrCommand_Test.cpp.s
+
+.PHONY : tests/StrCommand_Test.s
+
+# target to generate assembly for a file
+tests/StrCommand_Test.cpp.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/StrCommand_Test.cpp.s
+.PHONY : tests/StrCommand_Test.cpp.s
+
+tests/gtest_main.o: tests/gtest_main.cpp.o
+
+.PHONY : tests/gtest_main.o
+
+# target to build an object file
+tests/gtest_main.cpp.o:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/gtest_main.cpp.o
+.PHONY : tests/gtest_main.cpp.o
+
+tests/gtest_main.i: tests/gtest_main.cpp.i
+
+.PHONY : tests/gtest_main.i
+
+# target to preprocess a source file
+tests/gtest_main.cpp.i:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/gtest_main.cpp.i
+.PHONY : tests/gtest_main.cpp.i
+
+tests/gtest_main.s: tests/gtest_main.cpp.s
+
+.PHONY : tests/gtest_main.s
+
+# target to generate assembly for a file
+tests/gtest_main.cpp.s:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/tests/gtest_main.cpp.s
+.PHONY : tests/gtest_main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... RunCLient"
+	@echo "... tests"
 	@echo "... RunServer"
+	@echo "... gmock_main"
+	@echo "... gmock"
+	@echo "... gtest_main"
+	@echo "... gtest"
 	@echo "... ReadFile.o"
 	@echo "... ReadFile.i"
 	@echo "... ReadFile.s"
 	@echo "... Server.o"
 	@echo "... Server.i"
 	@echo "... Server.s"
+	@echo "... StrCommand.o"
+	@echo "... StrCommand.i"
+	@echo "... StrCommand.s"
 	@echo "... mainServer.o"
 	@echo "... mainServer.i"
 	@echo "... mainServer.s"
+	@echo "... tests/StrCommand_Test.o"
+	@echo "... tests/StrCommand_Test.i"
+	@echo "... tests/StrCommand_Test.s"
+	@echo "... tests/gtest_main.o"
+	@echo "... tests/gtest_main.i"
+	@echo "... tests/gtest_main.s"
 .PHONY : help
 
 

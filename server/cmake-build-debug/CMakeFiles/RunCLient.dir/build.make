@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /opt/clion-2017.2.3/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /opt/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
+RM = /home/yanivzi/clion_3/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sean/Desktop/ex4/src/server
+CMAKE_SOURCE_DIR = /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sean/Desktop/ex4/src/server/cmake-build-debug
+CMAKE_BINARY_DIR = /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/RunCLient.dir/depend.make
@@ -66,6 +66,6 @@ CMakeFiles/RunCLient.dir/clean:
 .PHONY : CMakeFiles/RunCLient.dir/clean
 
 CMakeFiles/RunCLient.dir/depend:
-	cd /home/sean/Desktop/ex4/src/server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sean/Desktop/ex4/src/server /home/sean/Desktop/ex4/src/server /home/sean/Desktop/ex4/src/server/cmake-build-debug /home/sean/Desktop/ex4/src/server/cmake-build-debug /home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles/RunCLient.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug /home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/RunCLient.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/RunCLient.dir/depend
 

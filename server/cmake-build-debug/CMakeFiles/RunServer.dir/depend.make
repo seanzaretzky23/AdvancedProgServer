@@ -7,6 +7,9 @@ CMakeFiles/RunServer.dir/ReadFile.cpp.o: ../ReadFile.h
 CMakeFiles/RunServer.dir/Server.cpp.o: ../Server.cpp
 CMakeFiles/RunServer.dir/Server.cpp.o: ../Server.h
 
+CMakeFiles/RunServer.dir/StrCommand.cpp.o: ../StrCommand.cpp
+CMakeFiles/RunServer.dir/StrCommand.cpp.o: ../StrCommand.h
+
 CMakeFiles/RunServer.dir/mainServer.cpp.o: ../ReadFile.cpp
 CMakeFiles/RunServer.dir/mainServer.cpp.o: ../ReadFile.h
 CMakeFiles/RunServer.dir/mainServer.cpp.o: ../Server.h

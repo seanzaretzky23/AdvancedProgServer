@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/RunServer.dir/mainServer.cpp.o CMakeFiles/RunServer.dir/Server.cpp.o CMakeFiles/RunServer.dir/ReadFile.cpp.o  -o RunServer 
+/usr/bin/c++   -lpthread -g   CMakeFiles/RunServer.dir/Server.cpp.o CMakeFiles/RunServer.dir/ReadFile.cpp.o CMakeFiles/RunServer.dir/StrCommand.cpp.o CMakeFiles/RunServer.dir/mainServer.cpp.o  -o RunServer lib/googletest-release-1.8.0/googlemock/gtest/libgtest.a lib/googletest-release-1.8.0/googlemock/gtest/libgtest_main.a -lpthread lib/googletest-release-1.8.0/googlemock/gtest/libgtest.a -lpthread 

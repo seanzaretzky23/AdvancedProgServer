@@ -6,25 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/sean/Desktop/ex4/src/server/ReadFile.cpp
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/ReadFile.cpp
 ReadFile.h
-/home/sean/Desktop/ex4/src/server/ReadFile.h
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/ReadFile.h
 stdio.h
-/home/sean/Desktop/ex4/src/server/stdio.h
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/stdio.h
 iostream
 -
 fstream
 -
 
-/home/sean/Desktop/ex4/src/server/ReadFile.h
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/ReadFile.h
 string.h
 -
 iostream
 -
 
-/home/sean/Desktop/ex4/src/server/Server.cpp
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/Server.cpp
 Server.h
-/home/sean/Desktop/ex4/src/server/Server.h
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/Server.h
 sys/socket.h
 -
 netinet/in.h
@@ -36,13 +36,29 @@ string.h
 iostream
 -
 
-/home/sean/Desktop/ex4/src/server/Server.h
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/Server.h
 
-/home/sean/Desktop/ex4/src/server/mainServer.cpp
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/StrCommand.cpp
+sstream
+-
+StrCommand.h
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/StrCommand.h
+
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/StrCommand.h
+iostream
+-
+string.h
+-
+vector
+-
+sstream
+-
+
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/mainServer.cpp
 Server.h
-/home/sean/Desktop/ex4/src/server/Server.h
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/Server.h
 ReadFile.cpp
-/home/sean/Desktop/ex4/src/server/ReadFile.cpp
+/home/yanivzi/CLionProjects/GitHubAdvancedProg/AdvancedProgServer/server/ReadFile.cpp
 stdlib.h
 -
 sstream

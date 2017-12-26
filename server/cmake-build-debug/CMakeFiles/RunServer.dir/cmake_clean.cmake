@@ -1,7 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/RunServer.dir/mainServer.cpp.o"
   "CMakeFiles/RunServer.dir/Server.cpp.o"
   "CMakeFiles/RunServer.dir/ReadFile.cpp.o"
+  "CMakeFiles/RunServer.dir/StrCommand.cpp.o"
+  "CMakeFiles/RunServer.dir/mainServer.cpp.o"
   "RunServer.pdb"
   "RunServer"
 )
