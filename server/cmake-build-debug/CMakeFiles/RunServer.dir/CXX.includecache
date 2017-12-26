@@ -6,25 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/home/sean/Desktop/ex4/src/server/ReadFile.cpp
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/Command.h
+vector
+-
+string
+-
+
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/PrintCommand.cpp
+PrintCommand.h
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/PrintCommand.h
+
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/PrintCommand.h
+Command.h
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/Command.h
+iostream
+-
+
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/ReadFile.cpp
 ReadFile.h
-/home/sean/Desktop/ex4/src/server/ReadFile.h
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/ReadFile.h
 stdio.h
-/home/sean/Desktop/ex4/src/server/stdio.h
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/stdio.h
 iostream
 -
 fstream
 -
 
-/home/sean/Desktop/ex4/src/server/ReadFile.h
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/ReadFile.h
 string.h
 -
 iostream
 -
 
-/home/sean/Desktop/ex4/src/server/Server.cpp
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/Server.cpp
 Server.h
-/home/sean/Desktop/ex4/src/server/Server.h
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/Server.h
 sys/socket.h
 -
 netinet/in.h
@@ -36,13 +52,13 @@ string.h
 iostream
 -
 
-/home/sean/Desktop/ex4/src/server/Server.h
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/Server.h
 
-/home/sean/Desktop/ex4/src/server/mainServer.cpp
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/mainServer.cpp
 Server.h
-/home/sean/Desktop/ex4/src/server/Server.h
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/Server.h
 ReadFile.cpp
-/home/sean/Desktop/ex4/src/server/ReadFile.cpp
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/ReadFile.cpp
 stdlib.h
 -
 sstream

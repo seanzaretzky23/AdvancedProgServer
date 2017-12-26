@@ -1,4 +1,3 @@
-/home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles/RunCLient.dir
-/home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles/RunServer.dir
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/RunServer.dir

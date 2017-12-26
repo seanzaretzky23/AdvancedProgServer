@@ -48,10 +48,10 @@ RM = /opt/clion-2017.2.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sean/Desktop/ex4/src/server
+CMAKE_SOURCE_DIR = /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sean/Desktop/ex4/src/server/cmake-build-debug
+CMAKE_BINARY_DIR = /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles /home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sean/Desktop/ex4/src/server/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sean/CLionProjects/AdvancedProgGitHUb/AdvancedProgServer/server/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RunCLient
-
-# Build rule for target.
-RunCLient: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RunCLient
-.PHONY : RunCLient
-
-# fast build rule for target.
-RunCLient/fast:
-	$(MAKE) -f CMakeFiles/RunCLient.dir/build.make CMakeFiles/RunCLient.dir/build
-.PHONY : RunCLient/fast
-
-#=============================================================================
 # Target rules for targets named RunServer
 
 # Build rule for target.
@@ -135,6 +122,60 @@ RunServer: cmake_check_build_system
 RunServer/fast:
 	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/build
 .PHONY : RunServer/fast
+
+CommandsManager.o: CommandsManager.cpp.o
+
+.PHONY : CommandsManager.o
+
+# target to build an object file
+CommandsManager.cpp.o:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/CommandsManager.cpp.o
+.PHONY : CommandsManager.cpp.o
+
+CommandsManager.i: CommandsManager.cpp.i
+
+.PHONY : CommandsManager.i
+
+# target to preprocess a source file
+CommandsManager.cpp.i:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/CommandsManager.cpp.i
+.PHONY : CommandsManager.cpp.i
+
+CommandsManager.s: CommandsManager.cpp.s
+
+.PHONY : CommandsManager.s
+
+# target to generate assembly for a file
+CommandsManager.cpp.s:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/CommandsManager.cpp.s
+.PHONY : CommandsManager.cpp.s
+
+PrintCommand.o: PrintCommand.cpp.o
+
+.PHONY : PrintCommand.o
+
+# target to build an object file
+PrintCommand.cpp.o:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/PrintCommand.cpp.o
+.PHONY : PrintCommand.cpp.o
+
+PrintCommand.i: PrintCommand.cpp.i
+
+.PHONY : PrintCommand.i
+
+# target to preprocess a source file
+PrintCommand.cpp.i:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/PrintCommand.cpp.i
+.PHONY : PrintCommand.cpp.i
+
+PrintCommand.s: PrintCommand.cpp.s
+
+.PHONY : PrintCommand.s
+
+# target to generate assembly for a file
+PrintCommand.cpp.s:
+	$(MAKE) -f CMakeFiles/RunServer.dir/build.make CMakeFiles/RunServer.dir/PrintCommand.cpp.s
+.PHONY : PrintCommand.cpp.s
 
 ReadFile.o: ReadFile.cpp.o
 
@@ -225,8 +266,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... RunCLient"
 	@echo "... RunServer"
+	@echo "... CommandsManager.o"
+	@echo "... CommandsManager.i"
+	@echo "... CommandsManager.s"
+	@echo "... PrintCommand.o"
+	@echo "... PrintCommand.i"
+	@echo "... PrintCommand.s"
 	@echo "... ReadFile.o"
 	@echo "... ReadFile.i"
 	@echo "... ReadFile.s"
