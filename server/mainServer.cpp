@@ -4,14 +4,15 @@
 *****************************************************************/
 
 #include "Server.h"
-#include "ReadFile.cpp"
+#include "FileReader.h"
 #include <stdlib.h>
 #include <sstream>
 
 #define CONFIG_FILE "configFileServer.txt"
 using namespace std;
 int main() {
-    string strPort = ReadPort(CONFIG_FILE);
+    FileReader fileReader;
+    string strPort = fileReader.ReadPort(CONFIG_FILE);
     //converting port to int
     int port;
     stringstream convert(strPort);
