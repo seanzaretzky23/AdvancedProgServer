@@ -12,7 +12,7 @@
 
 class PrintCommand: public Command {
 public:
-    virtual void execute(vector<string> args);
+    virtual void execute(std::vector<std::string> args, int socket = -1);
 };
 
 

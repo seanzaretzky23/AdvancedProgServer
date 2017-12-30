@@ -5,6 +5,15 @@
 
 #ifndef ADVANCEDPROGSERVER_SERVER_H
 #define ADVANCEDPROGSERVER_SERVER_H
+
+#include "StringCommandParser.h"
+#include "CommandsManager.h"
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <string>
+#include <iostream>
+
 class Server {
 public:
     /**************************************************************
@@ -26,9 +35,9 @@ public:
     * function name: connectToTwoPlayers
     * Input: no input
     * @return void
-    * function operation: connects to two clients
+    * function operation: accepts client connections
     *************************************************************/
-    void connectToTwoPlayers();
+    void acceptPlayersConnections();
 
     /******************************************************************
     * function name: letPlayersPlayAGame
@@ -50,8 +59,7 @@ private:
 
     int port;
     int serverSocket; // the socket's file descriptor
-    int clientSocketFirst; // the socket's file descriptor of the first player to connect to the server!!!!!!!!!!!magic number!!!!!!!!!!!!!!!!!
-    int clientSocketSecond; // the socket's file descriptor of the second player to connect to the server!!!!!!!!!!!magic number!!!!!!!!!!!!!!!
+    CommandsManager commandsManager;
 
     /************************************************************************
     * function name: switchTurn
@@ -69,6 +77,8 @@ private:
     *   checks if numOfBytesReceived is 0 (client disconnected) or 1 (error reading)after
     *   read then return true else (everything fine) return true
     *************************************************************************************/
-    bool errorInReadingFromCLient(int numOfBytesReceived) const;
+    bool errorInReadingFromClient(int numOfBytesReceived) const;
+
+    void handleClient(int clientSocket);
 };
 #endif //ADVANCEDPROGSERVER_SERVER_H

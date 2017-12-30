@@ -4,18 +4,12 @@
 *****************************************************************/
 
 #include "Server.h"
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <unistd.h>
-#include <string.h>
-#include <iostream>
-
 using namespace std;
 
 #define MAX_CONNECTED_CLIENTS 10
 #define BUFFER_SIZE 4096
 
-Server::Server(int port): port(port), serverSocket(0), clientSocketFirst(-1), clientSocketSecond(-1){
+Server::Server(int port): port(port), serverSocket(0){
 }
 void Server::start() {
 
@@ -35,33 +29,51 @@ void Server::start() {
     }
 }
 
-void Server::connectToTwoPlayers() {
-    // Define the client socket's structures
-    struct sockaddr_in clientAddress1;
-    socklen_t clientAddressLen1 = sizeof(clientAddress1);
-    struct sockaddr_in clientAddress2;
-    socklen_t clientAddressLen2 = sizeof(clientAddress2);
-    this->clientSocketFirst = -1;
-    this->clientSocketSecond = -1;
+void Server::acceptPlayersConnections() {
 
     // Start listening to incoming connections
     listen(serverSocket, MAX_CONNECTED_CLIENTS);
-    cout << "Waiting for client connections..." << endl;
+    while (true) {
+        // Define the client socket's structures
+        struct sockaddr_in clientAddress;
+        socklen_t clientAddressLen = sizeof(clientAddress);
+        int clientSocket = -1;
 
-    while (this->clientSocketFirst == -1) {
+        cout << "Waiting for client connections..." << endl;
+
         // trying to accept a new sender client connection
-        this->clientSocketFirst = accept(serverSocket, (struct sockaddr *) &clientAddress1, &clientAddressLen1);
+        clientSocket = accept(serverSocket, (struct sockaddr *) &clientAddress, &clientAddressLen);
+
+        cout << "client connection established" << endl;
+        if (clientSocket == -1) {
+            throw "Error on accept";
+        }
+        this->handleClient(clientSocket);
+
+        // Close communication with the client
+        close(clientSocket);
     }
-    cout << "first player connected" << endl;
-    while (this->clientSocketSecond == -1) {
-        // trying to accept a new sender client connection
-        this->clientSocketSecond = accept(serverSocket, (struct sockaddr *) &clientAddress2, &clientAddressLen2);
-    }
-    cout << "second player connected\n" << endl;
 
 }
 
+void Server::handleClient(int clientSocket) {
+    int numberOfBytesTransferred;
+    char buffer[BUFFER_SIZE];
+    memset(buffer, '\0', BUFFER_SIZE);
+    numberOfBytesTransferred = read(clientSocket, buffer, BUFFER_SIZE);
+    //checking if input from client is valid (received)
+    bool readingFailed = this->errorInReadingFromClient(numberOfBytesTransferred);
+    if (!readingFailed) {
+        StringCommandParser commandParser;
+        StringCommandParser::comData commandData = commandParser.strToNameAndArgc(string(buffer));
+        string command = commandData.comName;
+        vector<string> commandArgs = commandData.comArgs;
+        this->commandsManager.executeCommand(command, commandArgs, clientSocket);
+    }
+}
+
 void Server::letPlayersPlayAGame() {
+    /*
     //if there are less than two players that the server established connection with
     if (this->clientSocketFirst == -1 || this->clientSocketSecond == -1)
         throw "the server needs to connect to two players in order for a game to take place";
@@ -129,9 +141,10 @@ void Server::letPlayersPlayAGame() {
     cout << "disconnecting from clients\n" << endl;
     close(this->clientSocketFirst);
     close(this->clientSocketSecond);
+     */
 }
 
-bool Server::errorInReadingFromCLient(int numOfBytesReceived) const{
+bool Server::errorInReadingFromClient(int numOfBytesReceived) const{
     bool returnVal = false;
     switch(numOfBytesReceived) {
         case -1:

@@ -20,6 +20,7 @@ public:
     };
 
     comData strToNameAndArgc(std::string str);
+private:
     int countCharInString(std::string str, char ch);
 
 };

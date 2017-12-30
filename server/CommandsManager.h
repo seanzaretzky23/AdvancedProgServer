@@ -13,10 +13,9 @@ class CommandsManager {
 public:
     CommandsManager();
     ~CommandsManager();
-    void executeCommand(string command,
-                        vector<string> args);
+    void executeCommand(std::string command, std::vector<std::string> args, int clientSocket);
 private:
-    map<string, Command *> commandsMap;
+    std::map<std::string, Command *> commandsMap;
 };
 
 

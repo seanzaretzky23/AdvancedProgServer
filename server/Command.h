@@ -9,11 +9,11 @@
 
 #include <vector>
 #include <string>
-using namespace std;
 
 class Command {
 public:
-    virtual void execute(vector<string> args) = 0;
+    //port is optional parameter describing the socket identifier of the client
+    virtual void execute(std::vector<std::string> args, int socket = -1) = 0;
     virtual ~Command() {}
 };
 

@@ -6,7 +6,7 @@
 using namespace std;
 
 
-StringCommandParser::comData StringCommandParser::strToNameAndArgc(string str) { // !!!!!!!!!!!!!!!!!!! add check for if there is more than one command (word) before the <> thro exception
+StringCommandParser::comData StringCommandParser::strToNameAndArgc(string str) {
     istringstream iss(str);
     comData data;
     int countCommandWords = 0;
@@ -18,19 +18,23 @@ StringCommandParser::comData StringCommandParser::strToNameAndArgc(string str) {
     {
         string tok;
         iss >> tok;
-        if(tok[0] != '<') //check that we have at least one command and not just arguments!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        if (tok.empty()) {
+            break;
+        }
+        if(tok[0] != '<')
         {
-            //if tok is not just a space
-            if(!tok.compare(" "))
-            {
-                data.comName.append(tok);
-                countCommandWords++;
-                if(countCommandWords > 1)
-                    throw "error: more than on word for command name";
-            }
+
+            data.comName.append(tok);
+            countCommandWords++;
+            if (countCommandWords > 1)
+                throw "error: more than on word for command name";
+
         }
         else
         {
+            if (countCommandWords == 0) {
+                throw "invalid input, needed one command word";
+            }
             if(tok[tok.length()-1] != '>')
                 throw "invalid input";
             else

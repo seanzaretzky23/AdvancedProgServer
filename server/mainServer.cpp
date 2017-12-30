@@ -21,8 +21,8 @@ int main() {
     Server server(port);
     try {
         server.start();
-        while(true) {
-            server.connectToTwoPlayers();
+        /*while(true) {
+            server.acceptPlayersConnections();
             try {
                 server.letPlayersPlayAGame();
             } catch (const char *msg){
@@ -30,7 +30,8 @@ int main() {
                 exit(-1);
             }
             cout << "starting new game phase with two new open places for players\n" << endl;
-        }
+        }*/
+        server.acceptPlayersConnections();
     } catch (const char *msg) {
         cout << "Cannot start server. Reason: " << msg << endl;
         exit(-1);

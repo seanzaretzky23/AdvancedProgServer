@@ -4,7 +4,8 @@
 *****************************************************************/
 
 #include "PrintCommand.h"
-void PrintCommand::execute(vector<string> args) {
+using namespace std;
+void PrintCommand::execute(vector<string> args, int socket) {
     for (int i = 0; i < args.size(); i++) {
         cout << args[i] << " ";
     }
