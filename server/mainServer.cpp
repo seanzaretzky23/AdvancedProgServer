@@ -5,11 +5,17 @@
 
 #include "Server.h"
 #include "FileReader.h"
+#include <pthread.h>
 #include <stdlib.h>
-#include <sstream>
 
 #define CONFIG_FILE "configFileServer.txt"
 using namespace std;
+
+void *askServerToReceiveClientsMethod(void *parameter) {
+    Server *server = (Server *)parameter;
+    server->acceptPlayersConnections();
+}
+
 int main() {
     FileReader fileReader;
     string strPort = fileReader.ReadPort(CONFIG_FILE);
@@ -31,7 +37,18 @@ int main() {
             }
             cout << "starting new game phase with two new open places for players\n" << endl;
         }*/
-        server.acceptPlayersConnections();
+        pthread_t acceptingClientsThread;
+        int rc = pthread_create(&acceptingClientsThread, NULL, askServerToReceiveClientsMethod, &server);
+        if (rc) {
+            cout << "Error: unable to create \"accepting clients\" thread, " << rc << endl;
+            exit(-1);
+        }
+        /**
+         * add code for receiving exit command to terminate the server using its stop method add close all client sockets and threads
+         */
+        void *returnValue;
+        pthread_join(acceptingClientsThread, &returnValue);
+
     } catch (const char *msg) {
         cout << "Cannot start server. Reason: " << msg << endl;
         exit(-1);

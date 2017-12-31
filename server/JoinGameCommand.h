@@ -1,0 +1,14 @@
+//
+// Created by sean on 12/31/17.
+//
+
+#ifndef ADVANCEDPROGSERVER_JOINGAMECOMMAND_H
+#define ADVANCEDPROGSERVER_JOINGAMECOMMAND_H
+
+
+class JoinGameCommand {
+
+};
+
+
+#endif //ADVANCEDPROGSERVER_JOINGAMECOMMAND_H

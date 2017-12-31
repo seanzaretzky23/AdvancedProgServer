@@ -9,6 +9,11 @@ using namespace std;
 #define MAX_CONNECTED_CLIENTS 10
 #define BUFFER_SIZE 4096
 
+struct InfoForHandleClient {
+    int clientSocket;
+    CommandsManager *commandsManager;
+};
+
 Server::Server(int port): port(port), serverSocket(0){
 }
 void Server::start() {
@@ -31,6 +36,11 @@ void Server::start() {
 
 void Server::acceptPlayersConnections() {
 
+    vector<pthread_t *> threads;
+    //need to remove this and handle this all in handle client !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    InfoForHandleClient infoForHandleClient;
+    infoForHandleClient.commandsManager = &(this->commandsManager);
+    //need to remove this and handle this all in handle client !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // Start listening to incoming connections
     listen(serverSocket, MAX_CONNECTED_CLIENTS);
     while (true) {
@@ -48,27 +58,38 @@ void Server::acceptPlayersConnections() {
         if (clientSocket == -1) {
             throw "Error on accept";
         }
-        this->handleClient(clientSocket);
-
+        pthread_t clientRequest;
+        infoForHandleClient.clientSocket = clientSocket;
+        int rc = pthread_create(&clientRequest, NULL, handleClient, &infoForHandleClient);
+        if (rc) {
+            cout << "Error: unable to create \"accepting clients\" thread, " << rc << endl;
+            continue;
+        }
+        threads.push_back(&clientRequest);
+        /*
         // Close communication with the client
-        close(clientSocket);
+        close(clientSocket); !!!!!!dont think it needs to be here
+         */
     }
 
 }
 
-void Server::handleClient(int clientSocket) {
+void *Server::handleClient(void *info) {
+    InfoForHandleClient *infoForHandleClient = (InfoForHandleClient *)info;
+    int clientSocket = infoForHandleClient->clientSocket;
+    CommandsManager *comManager = infoForHandleClient->commandsManager;
     int numberOfBytesTransferred;
     char buffer[BUFFER_SIZE];
     memset(buffer, '\0', BUFFER_SIZE);
     numberOfBytesTransferred = read(clientSocket, buffer, BUFFER_SIZE);
     //checking if input from client is valid (received)
-    bool readingFailed = this->errorInReadingFromClient(numberOfBytesTransferred);
+    bool readingFailed = errorInReadingFromClient(numberOfBytesTransferred);
     if (!readingFailed) {
         StringCommandParser commandParser;
         StringCommandParser::comData commandData = commandParser.strToNameAndArgc(string(buffer));
         string command = commandData.comName;
         vector<string> commandArgs = commandData.comArgs;
-        this->commandsManager.executeCommand(command, commandArgs, clientSocket);
+        comManager->executeCommand(command, commandArgs, clientSocket);
     }
 }
 
@@ -144,7 +165,7 @@ void Server::letPlayersPlayAGame() {
      */
 }
 
-bool Server::errorInReadingFromClient(int numOfBytesReceived) const{
+bool Server::errorInReadingFromClient(int numOfBytesReceived){
     bool returnVal = false;
     switch(numOfBytesReceived) {
         case -1:

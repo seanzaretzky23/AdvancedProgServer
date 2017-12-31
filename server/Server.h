@@ -77,8 +77,8 @@ private:
     *   checks if numOfBytesReceived is 0 (client disconnected) or 1 (error reading)after
     *   read then return true else (everything fine) return true
     *************************************************************************************/
-    bool errorInReadingFromClient(int numOfBytesReceived) const;
+    static bool errorInReadingFromClient(int numOfBytesReceived);
 
-    void handleClient(int clientSocket);
+    static void *handleClient(void *infoForHandleClient);
 };
 #endif //ADVANCEDPROGSERVER_SERVER_H

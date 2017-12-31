@@ -6,11 +6,13 @@
 #include "CommandsManager.h"
 #include "PrintCommand.h"
 #include "ListOfGamesCommand.h"
+#include "StartGameCommand.h"
 using namespace std;
 
 CommandsManager::CommandsManager() {
     commandsMap["print"] = new PrintCommand();
     commandsMap["list_games"] = new ListOfGamesCommand();
+    commandsMap["start"] = new StartGameCommand();
     // Add more commands...
 }
 void CommandsManager::executeCommand(string command, vector<string> args, int clientSocket) {
@@ -18,7 +20,7 @@ void CommandsManager::executeCommand(string command, vector<string> args, int cl
     if (commandsMap.count(command)) {
         Command *commandObj = commandsMap[command];
         commandObj->execute(args, clientSocket);
-    }
+    }   //!!!!!!!!!!!!!!!!!!!!!!!! handle the case where invalid command is entered (maybe make a command for sending error message)!!!!!!!!!!!
 }
 CommandsManager::~CommandsManager() {
     map<string, Command *>::iterator it;

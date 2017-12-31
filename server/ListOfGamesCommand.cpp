@@ -19,7 +19,7 @@ void ListOfGamesCommand::execute(std::vector<std::string> args, int clientSocket
     }
 
     buffer = strListOfGames.c_str();
-    numberOfBytesTransferred = write(clientSocket, buffer, strlen(buffer));
+    numberOfBytesTransferred = write(clientSocket, buffer, strlen(buffer) + 1);
     if (numberOfBytesTransferred == -1) {
         stringstream ss;
         ss << clientSocket;
