@@ -5,6 +5,8 @@
 
 #include "Server.h"
 #include "FileReader.h"
+#include "OnGoingGamesStatsManager.h"
+#include "PendingGamesStatsManager.h"
 #include <pthread.h>
 #include <stdlib.h>
 
@@ -17,8 +19,14 @@ void *askServerToReceiveClientsMethod(void *parameter) {
 }
 
 int main() {
+    string strPort;
     FileReader fileReader;
-    string strPort = fileReader.ReadPort(CONFIG_FILE);
+    try {
+        strPort = fileReader.ReadPort(CONFIG_FILE);
+    } catch (const char * exc) {
+        cout << "error in mainServer: " << exc << endl;
+        exit (-1);
+    }
     //converting port to int
     int port;
     stringstream convert(strPort);
@@ -44,10 +52,28 @@ int main() {
             exit(-1);
         }
         /**
-         * add code for receiving exit command to terminate the server using its stop method add close all client sockets and threads
+         * enabling the server to finish and exit
          */
-        void *returnValue;
-        pthread_join(acceptingClientsThread, &returnValue);
+        string str = string("");
+        while (true) {
+            cout << "for stopping and closing the server type exit" << endl;
+            cin >> str;
+            //if we received exit command
+            if (str == "exit") {
+                OnGoingGamesStatsManager *onGoingGamesStatsManager = OnGoingGamesStatsManager::getInstanceOfOnGoingGameStatsManager();
+                onGoingGamesStatsManager->stopAndTerminateAllGames();
+                PendingGamesStatsManager *pendingGamesStatsManager = PendingGamesStatsManager::getInstanceOfPendingGameStatsManager();
+                pendingGamesStatsManager->stopAndTerminateAllGames();
+                server.stop();
+                pthread_cancel(acceptingClientsThread);
+                cout << "server is terminating after exit command" << endl;
+                exit (0);
+            } else {
+                cout << "incorrect termination command\n" << endl;
+            }
+        }
+        //void *returnValue;
+        //pthread_join(acceptingClientsThread, &returnValue);
 
     } catch (const char *msg) {
         cout << "Cannot start server. Reason: " << msg << endl;

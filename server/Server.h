@@ -39,35 +39,19 @@ public:
     *************************************************************/
     void acceptPlayersConnections();
 
-    /******************************************************************
-    * function name: letPlayersPlayAGame
-    * Input: no input
-    * @return void
-    * function operation: conducts the game session between two players
-    *******************************************************************/
-    void letPlayersPlayAGame();
-
     /************************************************************************
     * function name: stop
     * Input: no input
     * @return void
-    * function operation: executes stoping the server and closing connections
+    * function operation: executes stopping the server (terminates all active threads)
     *************************************************************************/
     void stop();
 private:
-    enum WhichPlayer {First = 1, Second = 2};
 
     int port;
     int serverSocket; // the socket's file descriptor
     CommandsManager commandsManager;
-
-    /************************************************************************
-    * function name: switchTurn
-    * Input: WhichPlayer &turn
-    * @return void
-    * function operation: switches the turn (with respect to the enum)
-    *************************************************************************/
-    void switchTurn(WhichPlayer &turn) const;
+    std::vector<pthread_t > threadsVec;
 
     /************************************************************************************
     * function name: errorInReadingFromCLient
@@ -79,6 +63,12 @@ private:
     *************************************************************************************/
     static bool errorInReadingFromClient(int numOfBytesReceived);
 
+    /************************************************************************************
+   * function name: handleClient
+   * Input: void *infoForHandleClient
+   * @return void
+   * function operation: the main method of threads who handle client requestes
+   *************************************************************************************/
     static void *handleClient(void *infoForHandleClient);
 };
-#endif //ADVANCEDPROGSERVER_SERVER_H
+#endif

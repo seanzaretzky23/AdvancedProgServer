@@ -13,12 +13,22 @@
 #include <iostream>
 #include <sstream>
 
+/**
+ * class responsible for the list_games command of server protocol
+ */
 class ListOfGamesCommand: public Command {
 public:
-    //returns the list of games as games names with ',' in between words and the word listOfGames in the beginning
+    //returns the list of games as games names with ',' in between words and the word list_of_games in the beginning
+    /**************************************************************
+    * function name: execute
+    * Input: std::vector<std::string> args, int clientSocket
+    * @return void
+    * function operation: returns to the specified client socket
+    *   the list of currently open to join games
+    **************************************************************/
     virtual void execute(std::vector<std::string> args, int clientSocket);
 
 };
 
 
-#endif //ADVANCEDPROGSERVER_LISTOFGAMESCOMMAND_H
+#endif

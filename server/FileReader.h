@@ -1,6 +1,7 @@
-//
-// Created by sean on 12/27/17.
-//
+/****************************************************************
+* Student name: sean zaretzky(209164086), yaniv zimmer (318849908)
+* Course Exercise Group: 03, 05
+*****************************************************************/
 
 #ifndef ADVANCEDPROGSERVER_FILEREADER_H
 #define ADVANCEDPROGSERVER_FILEREADER_H

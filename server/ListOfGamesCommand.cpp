@@ -4,18 +4,24 @@
 *****************************************************************/
 
 #include "ListOfGamesCommand.h"
-#include "GamesStatsManager.h"
+#include "PendingGamesStatsManager.h"
 
 using namespace std;
 
 void ListOfGamesCommand::execute(std::vector<std::string> args, int clientSocket) {
     int numberOfBytesTransferred;
     const char *buffer;
-    GamesStatsManager *gamesStatsManager = GamesStatsManager::getInstanceOfGameStatsManager();
+    bool firstWord = true;
+    PendingGamesStatsManager *gamesStatsManager = PendingGamesStatsManager::getInstanceOfPendingGameStatsManager();
     vector<GameStats> listOfGames = gamesStatsManager->getGames();
-    string strListOfGames = "listOfGames";
+    string strListOfGames = "list_of_games: ";
     for (vector<GameStats>::iterator it = listOfGames.begin(); it != listOfGames.end(); it++) {
-        strListOfGames += "," + it->getGameName();
+        if (firstWord) {
+            strListOfGames += it->getGameName();
+            firstWord = false;
+        } else {
+            strListOfGames += ", " + it->getGameName();
+        }
     }
 
     buffer = strListOfGames.c_str();
@@ -25,4 +31,5 @@ void ListOfGamesCommand::execute(std::vector<std::string> args, int clientSocket
         ss << clientSocket;
         cout << "Error writing List Of Games to client with the socket id: " << ss.str().c_str() << endl;
     }
+    close(clientSocket); //check if it needs to be here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }

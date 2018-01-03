@@ -1,6 +1,7 @@
-//
-// Created by sean on 12/27/17.
-//
+/****************************************************************
+* Student name: sean zaretzky(209164086), yaniv zimmer (318849908)
+* Course Exercise Group: 03, 05
+*****************************************************************/
 
 #include "FileReader.h"
 using namespace std;
@@ -15,6 +16,9 @@ string FileReader::ReadData(std::string fileName, std::string dataName) {
         kind=2;
     string outputData;
     inFile.open(fileName.c_str());
+    if (!inFile.is_open()) {
+        throw ("file \"" + fileName + "\" doesnt exist").c_str();
+    }
     inFile>>buffer;
     //if the file not containing the data name return empty string ""
     while((strcmp(buffer.c_str(),dataName.c_str())!=0)&&(!inFile.eof()))

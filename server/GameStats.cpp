@@ -1,14 +1,24 @@
-//
-// Created by sean on 12/28/17.
-//
+/****************************************************************
+* Student name: sean zaretzky(209164086), yaniv zimmer (318849908)
+* Course Exercise Group: 03, 05
+*****************************************************************/
 
 #include "GameStats.h"
 using namespace std;
 
-GameStats::GameStats(string gameName, int firstCLientSocket): gameName(gameName), firstClientSocket(firstCLientSocket) {
+GameStats::GameStats(string gameName, int firstClientSocket): gameName(gameName), firstClientSocket(firstClientSocket),
+                                                              secondClientSocket(-1){
 }
 
-GameStats::GameStats(std::string gameName): gameName(gameName){}
+GameStats::GameStats(std::string gameName): gameName(gameName), firstClientSocket(-1), secondClientSocket(-1) {}
+
+GameStats::GameStats(const GameStats &gameStatsToCopy) {
+    this->gameName = gameStatsToCopy.gameName;
+    this->firstClientSocket = gameStatsToCopy.firstClientSocket;
+    this->secondClientSocket = gameStatsToCopy.secondClientSocket;
+}
+
+GameStats::GameStats(): gameName(""), firstClientSocket(-1), secondClientSocket(-1) {}
 
 string GameStats::getGameName() const {
     return string(this->gameName);
